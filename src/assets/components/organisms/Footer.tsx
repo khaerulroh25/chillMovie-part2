@@ -3,19 +3,28 @@ import BrandLogo from "../atoms/BrandLogo";
 export default function Footer() {
   return (
     <footer className="bg-black text-gray-400 border-t border-[#2F3334]">
-      <div
-        className="
-          max-w-[1440px]
-          mx-auto
-          px-6
-          md:px-[20px]
-          py-12
-          grid
-          grid-cols-1
-          md:grid-cols-3
-          gap-12
-        "
-      >
+      <div className="md:hidden px-6 py-8 space-y-6">
+        <div className="space-y-4">
+          <BrandLogo />
+          <p className="text-sm">
+            &copy;{new Date().getFullYear()} Chill All Rights Reserved.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center justify-between text-white cursor-pointer">
+            <span className="text-base">Genre</span>
+            <span className="text-xl">{">"}</span>
+          </div>
+
+          <div className="flex items-center justify-between text-white cursor-pointer">
+            <span className="text-base">Bantuan</span>
+            <span className="text-xl">{">"}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden md:grid max-w-[1440px] mx-auto px-6 md:px-[20px] py-12 grid-cols-3 gap-12">
         <div className="space-y-4">
           <BrandLogo />
           <p className="text-sm">

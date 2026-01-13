@@ -1,0 +1,21 @@
+import Navbar from "../components/organisms/Navbar";
+import HeroSection from "../components/organisms/HeroSection";
+import ContinueWatchingSection from "../components/organisms/ContinueWatchingSection";
+import TopRatingSection from "../components/organisms/TopRatingSection";
+import TopTrandingSection from "../components/organisms/TopTrandingSection";
+import TopRilisSection from "../components/organisms/TopRilisSection";
+import Footer from "../components/organisms/Footer";
+
+export default function HomePage() {
+  return (
+    <div className="bg-black text-white font-sans">
+      <Navbar />
+      <HeroSection />
+      <ContinueWatchingSection />
+      <TopRatingSection />
+      <TopTrandingSection />
+      <TopRilisSection />
+      <Footer />
+    </div>
+  );
+}

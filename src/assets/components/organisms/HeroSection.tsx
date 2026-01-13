@@ -1,0 +1,82 @@
+import heroImage from "../../img/backgrounds/hero.png";
+import Button from "../atoms/Buttons";
+import infoIcon from "../../img/icons/information-outline.png";
+import volumeIcon from "../../img/icons/volume-off.png";
+
+export default function HeroSection() {
+  return (
+    <section className="relative w-full h-[420px] md:h-[540px]">
+      <img
+        src={heroImage}
+        alt="Hero Background"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+      <div className="relative z-10 h-full flex items-end">
+        <div className="px-6 pb-10 md:px-[80px] md:pb-[60px] max-w-[668px]">
+          <h1 className="text-[28px] md:text-[48px] font-bold mb-4">
+            Duty After School
+          </h1>
+
+          <p className="text-[14px] md:text-[18px] leading-[20px] text-gray-300 mb-6">
+            Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan,
+            Departemen Pertahanan mulai merekrut lebih banyak tentara, termasuk
+            siswa sekolah menengah. Mereka pun segera menjadi pejuang garis
+            depan dalam perang.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <Button variant="heroPrimary" className="w-full sm:w-[120px] ">
+              Mulai
+            </Button>
+
+            <Button variant="heroSecondary" className="w-full sm:w-[210px]">
+              <div className="flex items-center justify-center gap-2">
+                <img src={infoIcon} alt="" className="w-[24px] h-[24px]" />
+                <span>Selengkapnya</span>
+              </div>
+            </Button>
+            <span
+              className="
+                    w-[50px]
+                    h-[45px]
+                    flex
+                    items-center
+                    justify-center
+                    text-[18px]
+                    border
+                    border-gray-400
+                    rounded-full
+                    text-[#C1C2C4]
+                  "
+            >
+              18+
+            </span>
+          </div>
+          <button
+            className="
+                  absolute
+                  right-6
+                  bottom-10
+                  w-[45px]
+                  h-[45px]
+                  flex
+                  items-center
+                  justify-center
+                  border
+                  border-gray-400
+                  rounded-full
+                  text-[#C1C2C4]
+                  hover:bg-white/10
+                "
+            aria-label="Mute"
+          >
+            <img src={volumeIcon} alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}

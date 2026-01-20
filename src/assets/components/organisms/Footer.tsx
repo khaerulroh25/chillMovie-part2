@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="hidden md:grid max-w-[1440px] mx-auto px-6 md:px-[20px] py-12 grid-cols-3 gap-12">
+      <div className="hidden md:grid max-w-[1440px] mx-auto px-6 md:px-[80px] py-12 grid-cols-3 gap-12">
         <div className="space-y-4">
           <BrandLogo />
           <p className="text-sm">

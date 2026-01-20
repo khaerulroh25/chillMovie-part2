@@ -1,9 +1,7 @@
-import { useState } from "react";
-import BrandLogo from "../atoms/BrandLogo";
+import logo from "../../img/icons/logo.png";
 import avatar from "../../img/icons/avatar.png";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
   return (
     <nav className="w-full bg-black">
       <div
@@ -12,11 +10,21 @@ export default function Navbar() {
           flex
           items-center
           px-4
-          md:px-10
+          md:px-[80px]
         "
       >
-        <BrandLogo />
-        <div className="hidden md:flex items-center gap-8 ml-12 text-[16px] font-medium text-white">
+        <div className="flex items-center gap-[12px] md:gap-[80px] md-text-[18px] text-[10px] md:text-[16px] font-medium text-white">
+          <div className="flex item-center gap-[4px]">
+            <img
+              src={logo}
+              alt="Chill Logo"
+              className="w-[17px] h-[15px] md:w-[25px] md:h-[22px]"
+            />
+            <span className="hidden md:inline text-[32px] font-brand leading-none">
+              CHILL
+            </span>
+          </div>
+
           <span className="cursor-pointer hover:text-gray-300">Series</span>
           <span className="cursor-pointer hover:text-gray-300">Film</span>
           <span className="cursor-pointer hover:text-gray-300">
@@ -24,27 +32,12 @@ export default function Navbar() {
           </span>
         </div>
 
-        {open && (
-          <div className="md:hidden bg-black border-t border-[#2F3334] px-4">
-            <div className="flex justify-around py-3 text-[16px] md-text-sm text-white font-medium">
-              <span className="cursor-pointer hover:text-gray-300">Series</span>
-              <span className="cursor-pointer hover:text-gray-300">Film</span>
-              <span className="cursor-pointer hover:text-gray-300">
-                Daftar Saya
-              </span>
-            </div>
-          </div>
-        )}
-
-        <div className="ml-auto flex items-center gap-3">
-          <div
-            className="ml-auto flex items-center gap-2 cursor-pointer"
-            onClick={() => setOpen(!open)}
-          >
+        <div className="ml-auto flex items-center md:gap-3 gap-[4px]">
+          <div className="ml-auto flex items-center cursor-pointer">
             <img
               src={avatar}
               alt="User Avatar"
-              className="w-8 h-8 rounded-full object-cover"
+              className="md:w-[40px] md:h-[40px] w-[20px] h-[20px] rounded-full object-cover"
             />
             <svg
               width="16"

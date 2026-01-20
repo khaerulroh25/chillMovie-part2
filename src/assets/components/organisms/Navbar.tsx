@@ -1,5 +1,5 @@
 import logo from "../../img/icons/logo.png";
-import avatar from "../../img/icons/avatar.png";
+import AvatarDropdown from "../molecules/AvatarDropdown";
 
 export default function Navbar() {
   return (
@@ -32,29 +32,8 @@ export default function Navbar() {
           </span>
         </div>
 
-        <div className="ml-auto flex items-center md:gap-3 gap-[4px]">
-          <div className="ml-auto flex items-center cursor-pointer">
-            <img
-              src={avatar}
-              alt="User Avatar"
-              className="md:w-[40px] md:h-[40px] w-[20px] h-[20px] rounded-full object-cover"
-            />
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-white"
-            >
-              <path
-                d="M6 9l6 6 6-6"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
+        <div className="ml-auto flex items-center">
+          <AvatarDropdown />
         </div>
       </div>
     </nav>

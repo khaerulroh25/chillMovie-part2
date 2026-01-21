@@ -20,7 +20,7 @@ export default function Navbar() {
               <img
                 src={logo}
                 alt="Chill Logo"
-                className="w-[17px] h-[15px] md:w-[25px] md:h-[22px]"
+                className="w-[17px] h-[15px] md:w-[25px] md:h-[22px] mt-1"
               />
               <span className="hidden md:inline text-[32px] font-brand leading-none">
                 CHILL

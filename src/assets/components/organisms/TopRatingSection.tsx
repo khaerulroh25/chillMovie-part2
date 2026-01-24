@@ -53,13 +53,14 @@ export default function TopRatingSection({
             gap-[16px]
             md:gap-[28px]
             overflow-x-auto
+            overflow-y-hidden
             md:overflow-visible
             px-4
             md:ml-[80px]
             md:px-0
             md:w-[1445px]
             scroll-smooth
-            snap-x snap-mandatory
+            md:snap-x md:snap-mandatory
           "
         >
           <TopRatingCard

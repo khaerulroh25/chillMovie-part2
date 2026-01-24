@@ -26,11 +26,11 @@ export default function TopRatingCard({
 }: TopRatingCardProps) {
   const isAdded = myList.some((item) => item.id === id);
   return (
-    <div
-      className="
+    <div className="relative shrink-0">
+      <div
+        className="
         group
         relative
-        overflow-visible
         w-[96px]
         h-[143px]
         md:w-[234px]
@@ -39,15 +39,15 @@ export default function TopRatingCard({
         rounded-[4px]
         cursor-pointer
       "
-    >
-      <img
-        src={image}
-        alt=""
-        className="w-full h-full object-cover rounded-[4px]"
-      />
+      >
+        <img
+          src={image}
+          alt=""
+          className="w-full h-full object-cover rounded-[4px]"
+        />
 
-      <div
-        className="
+        <div
+          className="
           absolute
           top-1/2
           left-1/2
@@ -70,76 +70,77 @@ export default function TopRatingCard({
           group-hover:pointer-events-auto
           z-50
         "
-      >
-        <img src={image} className="w-[408px] h-[255px] object-cover" />
+        >
+          <img src={image} className="w-[408px] h-[255px] object-cover" />
 
-        <div className="gap-3 p-4 md:gap-[17px] md:p-[29px] ">
-          <div className="flex items-center  gap-4 mb-4">
-            <Button
-              variant="icon"
-              className=" bg-white hover:bg-gray-200 p-2 md:p-3"
-            >
-              <img
-                src={playIcon}
-                alt="Play"
-                className="md:w-4 md:h-4 w-3 h-3"
-              />
-            </Button>
+          <div className="gap-3 p-4 md:gap-[17px] md:p-[29px] ">
+            <div className="flex items-center  gap-4 mb-4">
+              <Button
+                variant="icon"
+                className=" bg-white hover:bg-gray-200 p-2 md:p-3"
+              >
+                <img
+                  src={playIcon}
+                  alt="Play"
+                  className="md:w-4 md:h-4 w-3 h-3"
+                />
+              </Button>
 
-            <Button
-              variant="icon"
-              onClick={() => onAddToMyList({ id, image })}
-              className=" border border-white/30 hover:bg-white/10 p-2 md:p-3"
-            >
-              <img
-                src={isAdded ? checkIcon : addIcon}
-                alt="Tambah"
-                className="md:w-4 md:h-4 w-3 h-3"
-              />
-            </Button>
+              <Button
+                variant="icon"
+                onClick={() => onAddToMyList({ id, image })}
+                className=" border border-white/30 hover:bg-white/10 p-2 md:p-3"
+              >
+                <img
+                  src={isAdded ? checkIcon : addIcon}
+                  alt="Tambah"
+                  className="md:w-4 md:h-4 w-3 h-3"
+                />
+              </Button>
 
-            <Button
-              variant="icon"
-              className=" ml-auto border border-white/30 hover:bg-white/10 p-2 md:p-3"
-            >
-              <img
-                src={chevronIcon}
-                alt="Like"
-                className="md:w-4 md:h-4 w-3 h-3"
-              />
-            </Button>
-          </div>
+              <Button
+                variant="icon"
+                className=" ml-auto border border-white/30 hover:bg-white/10 p-2 md:p-3"
+              >
+                <img
+                  src={chevronIcon}
+                  alt="Like"
+                  className="md:w-4 md:h-4 w-3 h-3"
+                />
+              </Button>
+            </div>
 
-          <div className="flex gap-2 text-xs text-[16px] mt-1">
-            <span className="px-2 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-medium text-[#C1C2C4] bg-[#CDF1FF4D] rounded-full">
-              16+
-            </span>
+            <div className="flex gap-2 text-xs text-[16px] mt-1">
+              <span className="px-2 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-medium text-[#C1C2C4] bg-[#CDF1FF4D] rounded-full">
+                16+
+              </span>
 
-            <span className="text-white">16 Episode</span>
-          </div>
+              <span className="text-white">16 Episode</span>
+            </div>
 
-          <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs sm:text-[18px] text-[#C1C2C4] mt-2">
-            <span>Misteri</span>
-            <span>•</span>
-            <span>Kriminal</span>
-            <span>•</span>
-            <span>Fantasi</span>
+            <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs sm:text-[18px] text-[#C1C2C4] mt-2">
+              <span>Misteri</span>
+              <span>•</span>
+              <span>Kriminal</span>
+              <span>•</span>
+              <span>Fantasi</span>
+            </div>
           </div>
         </div>
+
+        {badge === "episode" && (
+          <span className="absolute flex items-center justify-center gap-[2px] top-[8px] md:top-[16px] left-3 w-[44px] h-[14px] md:w-[104px] md:h-[28px] bg-[#1E40AF] text-white text-[6px] md:text-[14px] rounded-full ">
+            Episode Baru
+          </span>
+        )}
+
+        {badge === "top10" && (
+          <div className="absolute gap-[5px] md:gap-[10px] top-0 right-3 flex flex-col items-center justify-center w-[15px] h-[22px] md:w-[31px] md:h-[48px] bg-[#E50914] text-white  rounded-tr-[20%] rounded-bl-[20%]">
+            <span className="text-[7px] md:text-[14px] leading-none">Top</span>
+            <span className="text-[7px] md:text-[14px] leading-none">10</span>
+          </div>
+        )}
       </div>
-
-      {badge === "episode" && (
-        <span className="absolute flex items-center justify-center gap-[2px] top-[8px] md:top-[16px] left-3 w-[44px] h-[14px] md:w-[104px] md:h-[28px] bg-[#1E40AF] text-white text-[6px] md:text-[14px] rounded-full ">
-          Episode Baru
-        </span>
-      )}
-
-      {badge === "top10" && (
-        <div className="absolute gap-[5px] md:gap-[10px] top-0 right-3 flex flex-col items-center justify-center w-[15px] h-[22px] md:w-[31px] md:h-[48px] bg-[#E50914] text-white  rounded-tr-[20%] rounded-bl-[20%]">
-          <span className="text-[7px] md:text-[14px] leading-none">Top</span>
-          <span className="text-[7px] md:text-[14px] leading-none">10</span>
-        </div>
-      )}
     </div>
   );
 }

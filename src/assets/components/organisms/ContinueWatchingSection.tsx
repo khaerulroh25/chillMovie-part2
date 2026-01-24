@@ -15,14 +15,14 @@ export default function ContinueWatchingSection() {
         Melanjutkan Tonton Film
       </h2>
 
-      <div className="relative overflow-hidden pb-[50px]">
+      <div className="relative overflow-hidden pb-[50px] ">
         <Button
           variant="icon"
           className="
             hidden md:flex
             absolute
             left-[50px]
-            top-1/2
+            top-[40%]
             -translate-y-1/2
             z-10
             bg-[#22282A]
@@ -67,7 +67,7 @@ export default function ContinueWatchingSection() {
             hidden md:flex
             absolute
             right-[50px]
-            top-1/2
+            top-[40%]
             -translate-y-1/2
             z-10
             bg-[#2F3334]

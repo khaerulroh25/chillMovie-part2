@@ -49,8 +49,8 @@ export default function TopRatingCard({
         <div
           className="
           absolute
-          top-1/2
-          left-1/2
+          md:top-1/2
+          md:left-1/2
           -translate-x-1/2
           -translate-y-1/2
           w-[200px]
